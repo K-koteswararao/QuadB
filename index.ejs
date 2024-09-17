@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Prices</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2C3E50;
+      color: #ECF0F1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #34495E;
+    }
+  </style>
+</head>
+<body>
+  <h1>Best Prices to Trade</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Last Traded Price</th>
+        <th>Buy Price</th>
+        <th>Sell Price</th>
+        <th>Volume</th>
+        <th>Base Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach((crypto, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= crypto.name %></td>
+          <td>₹<%= crypto.last %></td>
+          <td>₹<%= crypto.buy %></td>
+          <td>₹<%= crypto.sell %></td>
+          <td><%= crypto.volume %></td>
+          <td><%= crypto.base_unit %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
